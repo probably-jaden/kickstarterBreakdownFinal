@@ -2,6 +2,8 @@
 
 Welcome to the **Kickstarter Analysis** project! This repository contains a Python package and a Streamlit web application for analyzing Kickstarter projects, understanding business variables, and predicting the probability of success for crowdfunding campaigns.
 
+Best way to get familiar with the repo is to play around on the streamlit app, which can be visited here: https://kickstarter.streamlit.app/
+
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)
@@ -103,7 +105,7 @@ Run the Streamlit app:
 streamlit run app.py
 ```
 
-Open your browser to http://localhost:8501 to view the app.
+Alternatively view the app at https://kickstarter.streamlit.app/ 
 
 ## Using the Python Package
 You can also use the Python package programmatically in your own scripts.
