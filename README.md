@@ -13,7 +13,6 @@ Welcome to the **Kickstarter Analysis** project! This repository contains a Pyth
 - [Package Modules](#package-modules)
 - [Example Use Cases](#example-use-cases)
 - [Dependencies](#dependencies)
-- [Contributing](#contributing)
 - [License](#license)
 
 ---
@@ -60,27 +59,32 @@ kickstarter_analysis/
 ├── setup.py                   # Package installation configuration
 ├── README.md                  # Documentation
 └── LICENSE                    # License file
+```
 
 
 ## Installation
 Clone the Repository
-bash
-Copy code
+
+```plaintext
 git clone https://github.com/yourusername/kickstarter_analysis.git
 cd kickstarter_analysis
-Install Dependencies
+```
+
+### Install Dependencies
 Use pip to install the required packages:
 
-bash
-Copy code
+```plaintext
 pip install -r requirements.txt
-Install the Package
+```
+
+### Install the Package
 Install the package locally in editable mode:
 
-bash
-Copy code
+```plaintext
 pip install -e .
-Usage
+```
+
+## Usage
 ## Running the Streamlit App
 The Streamlit app provides an interactive dashboard to explore and analyze Kickstarter data.
 
@@ -88,17 +92,18 @@ Navigate to the app/ directory.
 
 Run the Streamlit app:
 
-bash
-Copy code
+```plaintext
 streamlit run app.py
+```
+
 Open your browser to http://localhost:8501 to view the app.
 
 ## Using the Python Package
 You can also use the Python package programmatically in your own scripts.
 
 Example Script
-python
-Copy code
+
+```plaintext
 from your_package.preprocessing import load_data, preprocess_data
 from your_package.analysis import filter_category, compute_business_variables
 from your_package.plotting import plot_business_variables
@@ -130,7 +135,7 @@ break_fig, overhead_fig, profit_fig = plot_business_variables(
 break_fig.show()
 overhead_fig.show()
 profit_fig.show()
-
+```
 
 ## Package Modules
 1. preprocessing.py
@@ -167,28 +172,6 @@ scipy
 statsmodels
 plotly
 
-
-## Contributing
-Contributions are welcome! To contribute:
-
-Fork the repository.
-
-Create a new branch:
-
-bash
-Copy code
-git checkout -b feature/your-feature
-Commit your changes:
-
-bash
-Copy code
-git commit -m "Add new feature"
-Push to the branch:
-
-bash
-Copy code
-git push origin feature/your-feature
-Submit a pull request.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
