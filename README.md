@@ -45,7 +45,7 @@ The tool is ideal for creators, analysts, and data enthusiasts to make informed 
 ```plaintext
 kickstarter_analysis/
 │
-├── your_package/              # Python package directory
+├── final/              # Python package directory
 │   ├── __init__.py            # Package initialization
 │   ├── preprocessing.py       # Data loading and preprocessing functions
 │   ├── analysis.py            # Business variable computations
@@ -54,7 +54,14 @@ kickstarter_analysis/
 │
 ├── app/                       # Streamlit app directory
 │   └── app.py                 # Main Streamlit script
-│
+├── build
+│   ├── doctrees
+│   └── html
+│       ├── _sources
+│       │   ├── final.rst.txt
+│       │   ├── index.rst.txt
+│       │   └── modules.rst.txtgi
+├── kickstarterData.csv
 ├── requirements.txt           # List of Python dependencies
 ├── setup.py                   # Package installation configuration
 ├── README.md                  # Documentation
