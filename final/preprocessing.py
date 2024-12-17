@@ -34,7 +34,6 @@ def load_data():
     1               1.2         300.0       music    ...  Song            5
     """
     df_combined = pd.read_csv("kickstarterData.csv")
-    df_combined['usd_exchange_rate'] = pd.to_numeric(df_combined['usd_exchange_rate'], errors='coerce')
     df_combined['usd_pledged'] = pd.to_numeric(df_combined['usd_pledged'], errors='coerce')
     df_combined['goal'] = pd.to_numeric(df_combined['goal'], errors='coerce')
 
