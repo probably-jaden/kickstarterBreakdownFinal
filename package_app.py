@@ -75,6 +75,8 @@ with colB:
     pct_pledge, interp_pledge = get_percentile_and_interpretation(pledge_value, data['averagePledge'])
     st.markdown("<div style='text-align:center; font-size:24px;'>Average Pledge</div>", unsafe_allow_html=True)
     st.markdown(f"<div style='text-align:center;'>Pledge is at {pct_pledge:.2f}% percentile - {interp_pledge}</div>", unsafe_allow_html=True)
+    with st.expander("Explanation"):
+        st.write("This section visualizes the average pledge value for backers. A higher average pledge reduces the total number of backers needed to reach your goal. The plot compares your pledge value to other campaigns in the same category")
 
 st.markdown("<br><br>", unsafe_allow_html=True)
 
@@ -90,6 +92,9 @@ with col_b1:
 with col_b2:
     pct_backers, interpretation_backers = get_percentile_and_interpretation(userBreakEvenQuantity, userData['breakQ'])
     st.markdown(f"**Percentile:** {pct_backers:.2f}% - {interpretation_backers}")
+    with st.expander("Explanation"):
+        st.write("This plot estimates how many backers you need to break even based on your goal, average pledge, and unit cost. The fewer backers required, the more achievable your target becomes.")
+
 
 st.markdown("<br><br>", unsafe_allow_html=True)
 
@@ -101,6 +106,8 @@ with col_o1:
 with col_o2:
     pct_overhead_val, interpretation_overhead_val = get_percentile_and_interpretation(userOverhead, userData['fCost'])
     st.markdown(f"**Percentile:** {pct_overhead_val:.2f}% - {interpretation_overhead_val}")
+    with st.expander("Explanation"):
+        st.write("Overhead represents the fixed costs of running your campaign, regardless of how many rewards are fulfilled. This section helps you evaluate how your overhead compares to similar projects")
 
 st.markdown("<br><br>", unsafe_allow_html=True)
 
@@ -112,11 +119,13 @@ with col_p1:
 with col_p2:
     pct_profit_val, interpretation_profit_val = get_percentile_and_interpretation(userProfit, userData['profit'])
     st.markdown(f"**Percentile:** {pct_profit_val:.2f}% - {interpretation_profit_val}")
+    with st.expander("Explanation"):
+        st.write("This graph calculates your estimated profit based on the break-even percentage, pledge value, and unit cost. Maximizing your profit ensures that your campaign remains financially viable after expenses.")
 
 st.markdown("<br><br>", unsafe_allow_html=True)
 
 st.header("Your Kickstarter Goal")
-st.markdown(f"<div style='text-align:center; font-size:48px; font-weight:bold;'>{new_goal_value:,.2f}</div>", unsafe_allow_html=True)
+st.markdown(f"<div style='text-align:center; font-size:48px; font-weight:bold;'>${new_goal_value:,.2f}</div>", unsafe_allow_html=True)
 st.markdown("<div style='text-align:center; font-size:20px;'>Recommended Goal</div>", unsafe_allow_html=True)
 
 fig_goal_compare, ax = plt.subplots(figsize=(8,6))
@@ -135,52 +144,62 @@ with col_g1:
     st.pyplot(fig_goal_compare)
 with col_g2:
     st.markdown(f"**Percentile:** {goal_percentile_val:.2f}% - {goal_interpretation}")
+    with st.expander("Explanation"):
+        st.write("This density plot compares your campaign's goal to the distribution of goals across similar projects. The dashed line indicates where your goal falls relative to the competition.")
+
 
 st.markdown("<br><br>", unsafe_allow_html=True)
 
+# 3D PLOT - RESIZED WITH BOX OUTLINE
 st.subheader("Predicting the Chances of Success")
+col_3d1, col_3d2 = st.columns([2,1])
+with col_3d1:
+    kick = filter_category(data, selected_category).copy()
+    kick['color'] = np.where(kick['passed'] == 1, "#90EE90", "#FFB6C1")
+    kick['label'] = np.where(kick['passed'] == 1, "Passing their goal", "Failed their goal")
 
-kick = filter_category(data, selected_category).copy()
-kick['color'] = np.where(kick['passed'] == 1, "#90EE90", "#FFB6C1")
-kick['label'] = np.where(kick['passed'] == 1, "Passing their goal", "Failed their goal")
+    fig_3d = go.Figure(data=go.Scatter3d(
+        x=np.log10(kick['averagePledge']),
+        y=np.log10(kick['goal_usd']),
+        z=np.log10(kick['percent_of_goal_reached']),
+        mode='markers',
+        marker=dict(
+            size=3,
+            opacity=0.3,
+            color=kick['color'],
+        ),
+        text=kick['label'],
+        hovertemplate="<b>%{text}</b><br>Avg Pledge: %{x}<br>Goal: %{y}<br>%Goal: %{z}<extra></extra>"
+    ))
 
-fig_3d = go.Figure(data=go.Scatter3d(
-    x=np.log10(kick['averagePledge']),
-    y=np.log10(kick['goal_usd']),
-    z=np.log10(kick['percent_of_goal_reached']),
-    mode='markers',
-    marker=dict(
-        size=3,
-        opacity=0.3,
-        color=kick['color'],
-    ),
-    text=kick['label'],
-    hovertemplate="<b>%{text}</b><br>Avg Pledge: %{x}<br>Goal: %{y}<br>%Goal: %{z}<extra></extra>"
-))
-
-fig_3d.update_layout(
-    height=800,
-    scene=dict(
-        zaxis=dict(
-            title="% of goal reached",
-            tickvals=np.log10([0.001, 0.01, 0.1, 1, 10, 100, 1000, 10000]),
-            ticktext=["0.1%", "1%","10%", "100%", "10x", "100x", "1,000x", "10,000x"]
-        ),
-        yaxis=dict(
-            title="goal $'s",
-            tickvals=np.log10([1, 10, 100, 1000, 10000, 100000]),
-            ticktext=["$1", "$10", "$100", "$1k", "$10k", "$100k"]
-        ),
-        xaxis=dict(
-            title="average pledge $'s",
-            tickvals=np.log10([1, 10, 100, 1000, 10000, 100000]),
-            ticktext=["$1", "$10", "$100", "$1k", "$10k", "$100k"]
-        ),
-        aspectmode="cube"
+    fig_3d.update_layout(
+        height=500,
+        margin=dict(l=10, r=10, b=10, t=10),
+        scene=dict(
+            zaxis=dict(
+                title="% of goal reached",
+                tickvals=np.log10([0.001, 0.01, 0.1, 1, 10, 100, 1000, 10000]),
+                ticktext=["0.1%", "1%","10%", "100%", "10x", "100x", "1,000x", "10,000x"]
+            ),
+            yaxis=dict(
+                title="goal $'s",
+                tickvals=np.log10([1, 10, 100, 1000, 10000, 100000]),
+                ticktext=["$1", "$10", "$100", "$1k", "$10k", "$100k"]
+            ),
+            xaxis=dict(
+                title="average pledge $'s",
+                tickvals=np.log10([1, 10, 100, 1000, 10000, 100000]),
+                ticktext=["$1", "$10", "$100", "$1k", "$10k", "$100k"]
+            ),
+            aspectmode="cube"
+        )
     )
-)
 
-st.plotly_chart(fig_3d, use_container_width=True)
+    st.plotly_chart(fig_3d, use_container_width=True)
+
+with col_3d2:
+    with st.expander("Explanation - Predicting the Chances of Success"):
+        st.write("This 3D scatter plot illustrates how average pledge, goal value, and percentage of goal reached impact the likelihood of success. Green markers represent successful campaigns, while red ones show failures.")
 
 st.markdown("<br><br>", unsafe_allow_html=True)
 
@@ -194,6 +213,8 @@ with colF:
     st.markdown(f"<div style='text-align:center;'>Predicted % of Goal: {100*(10**(pred_mean)):.2f}%</div>", unsafe_allow_html=True)
     st.markdown(f"<div style='text-align:center;'>Percentile: {percent_percentile:.2f}% - {percent_interpretation}</div>", unsafe_allow_html=True)
     st.markdown(f"<div style='text-align:center;'>90% CI: [{100*lower_percent:.2f}%, {100*upper_percent:.2f}%]</div>", unsafe_allow_html=True)
+    with st.expander("Explanation"):
+        st.write("This plot predicts the percentage of your goal that you are likely to achieve based on the model's estimates. It also provides a confidence interval to account for uncertainty in the prediction.")
 
 st.markdown("<br><br>", unsafe_allow_html=True)
 
@@ -206,3 +227,5 @@ with colH:
     st.markdown(f"<div style='text-align:center;'>Expected Revenue: ${expectedRevenue:,.2f}</div>", unsafe_allow_html=True)
     st.markdown(f"<div style='text-align:center;'>Percentile: {revenue_percentile:.2f}% - {revenue_interpretation}</div>", unsafe_allow_html=True)
     st.markdown(f"<div style='text-align:center;'>90% CI: [${lower_rev:,.2f}, ${upper_rev:,.2f}]</div>", unsafe_allow_html=True)
+    with st.expander("Explanation"):
+        st.write("This section calculates your expected revenue, accounting for uncertainty and variability in your campaign's performance. The confidence interval provides a range of possible outcomes.")
