@@ -192,8 +192,3 @@ For questions or support, contact:
 Your Name
 Email: oldofme3@gmail.com
 GitHub: https://github.com/probably-jaden
-
-vbnet
-Copy code
-
-This version ensures all code blocks, headers, and links display correctly when pasted into a GitHub repository. Let me know if you'd like further refinements!
