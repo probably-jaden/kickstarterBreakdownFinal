@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>final package &mdash; kickstarterBreakdown 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="final package" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            kickstarterBreakdown
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">final package</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">final package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-final.analysis">final.analysis module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#final.analysis.compute_business_variables"><code class="docutils literal notranslate"><span class="pre">compute_business_variables()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#final.analysis.filter_category"><code class="docutils literal notranslate"><span class="pre">filter_category()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#final.analysis.get_percentile_and_interpretation"><code class="docutils literal notranslate"><span class="pre">get_percentile_and_interpretation()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-final.app">final.app module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#final.app.compute_business_variables"><code class="docutils literal notranslate"><span class="pre">compute_business_variables()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#final.app.filter_category"><code class="docutils literal notranslate"><span class="pre">filter_category()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#final.app.fit_interaction_model"><code class="docutils literal notranslate"><span class="pre">fit_interaction_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#final.app.get_percentile_and_interpretation"><code class="docutils literal notranslate"><span class="pre">get_percentile_and_interpretation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#final.app.load_data"><code class="docutils literal notranslate"><span class="pre">load_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#final.app.plot_business_variables"><code class="docutils literal notranslate"><span class="pre">plot_business_variables()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#final.app.plot_density_with_vline"><code class="docutils literal notranslate"><span class="pre">plot_density_with_vline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#final.app.plot_kickstarter_analysis"><code class="docutils literal notranslate"><span class="pre">plot_kickstarter_analysis()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#final.app.preprocess_data"><code class="docutils literal notranslate"><span class="pre">preprocess_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-final.data_handling">final.data_handling module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#final.data_handling.load_data"><code class="docutils literal notranslate"><span class="pre">load_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-final.main">final.main module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#final.main.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-final.modeling">final.modeling module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#final.modeling.fit_interaction_model"><code class="docutils literal notranslate"><span class="pre">fit_interaction_model()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#final-package-app-module">final.package_app module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-final.plotting">final.plotting module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#final.plotting.plot_business_variables"><code class="docutils literal notranslate"><span class="pre">plot_business_variables()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#final.plotting.plot_density_with_vline"><code class="docutils literal notranslate"><span class="pre">plot_density_with_vline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#final.plotting.plot_kickstarter_analysis"><code class="docutils literal notranslate"><span class="pre">plot_kickstarter_analysis()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-final.preprocessing">final.preprocessing module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#final.preprocessing.load_data"><code class="docutils literal notranslate"><span class="pre">load_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#final.preprocessing.preprocess_data"><code class="docutils literal notranslate"><span class="pre">preprocess_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#final-setup-module">final.setup module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-final">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">kickstarterBreakdown</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">final package</a></li>
+      <li class="breadcrumb-item active">final package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/final.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="final-package">
+<h1>final package<a class="headerlink" href="#final-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-final.analysis">
+<span id="final-analysis-module"></span><h2>final.analysis module<a class="headerlink" href="#module-final.analysis" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="final.analysis.compute_business_variables">
+<span class="sig-prename descclassname"><span class="pre">final.analysis.</span></span><span class="sig-name descname"><span class="pre">compute_business_variables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userData</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pledge_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_cost</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overhead</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">breakEvenPercentageOfGoal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final.analysis.compute_business_variables" title="Link to this definition"></a></dt>
+<dd><p>Computes business-related financial variables for a set of projects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>userData</strong> (<em>pd.DataFrame</em>) – DataFrame containing project-related data. Must include the columns:
+- ‘goal_usd’ : Target goal in USD.
+- ‘averagePledge’ : Average pledge value.</p></li>
+<li><p><strong>pledge_value</strong> (<em>float</em>) – The value of a single pledge in monetary terms.</p></li>
+<li><p><strong>unit_cost</strong> (<em>float</em>) – The cost per unit to produce or fulfill the pledge.</p></li>
+<li><p><strong>overhead</strong> (<em>float</em>) – Fixed overhead cost that needs to be covered.</p></li>
+<li><p><strong>breakEvenPercentageOfGoal</strong> (<em>float</em>) – The percentage of the goal that determines the break-even point.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>A tuple containing:
+- pd.DataFrame : Updated DataFrame with computed columns:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>’vCost’ : Variable cost per project.</p></li>
+<li><p>’breakQ’ : Break-even quantity.</p></li>
+<li><p>’fCost’ : Fixed costs based on break-even analysis.</p></li>
+<li><p>’profit’ : Profit projection.</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>float : User break-even quantity.</p></li>
+<li><p>float : Goal value to cover overhead.</p></li>
+<li><p>float : User profit.</p></li>
+<li><p>float : User overhead cost.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">userData</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;goal_usd&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1000</span><span class="p">],</span> <span class="s1">&#39;averagePledge&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compute_business_variables</span><span class="p">(</span><span class="n">userData</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="go">(   goal_usd  averagePledge  vCost  breakQ  fCost  profit</span>
+<span class="go"> 0      1000             50   15.0    10.0   350.0   175.0,</span>
+<span class="go"> 5.0,</span>
+<span class="go"> 1000.0,</span>
+<span class="go"> 175.0,</span>
+<span class="go"> 500.0)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="final.analysis.filter_category">
+<span class="sig-prename descclassname"><span class="pre">final.analysis.</span></span><span class="sig-name descname"><span class="pre">filter_category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">userCategory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#final.analysis.filter_category" title="Link to this definition"></a></dt>
+<dd><p>Filters a DataFrame to include only rows where the ‘parent_category’ matches the specified userCategory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – The input DataFrame containing at least a ‘parent_category’ column.</p></li>
+<li><p><strong>userCategory</strong> (<em>str</em>) – The category to filter the DataFrame on.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A filtered DataFrame containing only rows where ‘parent_category’ equals userCategory.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;parent_category&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">],</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filter_category</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="go">   parent_category  value</span>
+<span class="go">0               A      1</span>
+<span class="go">2               A      3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="final.analysis.get_percentile_and_interpretation">
+<span class="sig-prename descclassname"><span class="pre">final.analysis.</span></span><span class="sig-name descname"><span class="pre">get_percentile_and_interpretation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_series</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final.analysis.get_percentile_and_interpretation" title="Link to this definition"></a></dt>
+<dd><p>Computes the percentile rank of a given value within a data series and provides an interpretation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>float</em>) – The value to be evaluated.</p></li>
+<li><p><strong>data_series</strong> (<em>pd.Series</em>) – A pandas Series containing numerical data to compare against.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>A tuple containing:
+- float : Percentile rank of the value (0-100).
+- str : Interpretation of the percentile:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>”abnormally low” for values below the 20th percentile.</p></li>
+<li><p>”normal” for values between the 20th and 80th percentiles.</p></li>
+<li><p>”abnormally high” for values above the 80th percentile.</p></li>
+</ul>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_percentile_and_interpretation</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="go">(40.0, &#39;normal&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-final.app">
+<span id="final-app-module"></span><h2>final.app module<a class="headerlink" href="#module-final.app" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="final.app.compute_business_variables">
+<span class="sig-prename descclassname"><span class="pre">final.app.</span></span><span class="sig-name descname"><span class="pre">compute_business_variables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userData</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pledge_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_cost</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overhead</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">breakEvenPercentageOfGoal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final.app.compute_business_variables" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="final.app.filter_category">
+<span class="sig-prename descclassname"><span class="pre">final.app.</span></span><span class="sig-name descname"><span class="pre">filter_category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">userCategory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#final.app.filter_category" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="final.app.fit_interaction_model">
+<span class="sig-prename descclassname"><span class="pre">final.app.</span></span><span class="sig-name descname"><span class="pre">fit_interaction_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final.app.fit_interaction_model" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="final.app.get_percentile_and_interpretation">
+<span class="sig-prename descclassname"><span class="pre">final.app.</span></span><span class="sig-name descname"><span class="pre">get_percentile_and_interpretation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_series</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final.app.get_percentile_and_interpretation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="final.app.load_data">
+<span class="sig-prename descclassname"><span class="pre">final.app.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final.app.load_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="final.app.plot_business_variables">
+<span class="sig-prename descclassname"><span class="pre">final.app.</span></span><span class="sig-name descname"><span class="pre">plot_business_variables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userData</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pledge_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_cost</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overhead</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">breakEvenPercentageOfGoal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final.app.plot_business_variables" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="final.app.plot_density_with_vline">
+<span class="sig-prename descclassname"><span class="pre">final.app.</span></span><span class="sig-name descname"><span class="pre">plot_density_with_vline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vline_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_breaks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#4682B4'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final.app.plot_density_with_vline" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="final.app.plot_kickstarter_analysis">
+<span class="sig-prename descclassname"><span class="pre">final.app.</span></span><span class="sig-name descname"><span class="pre">plot_kickstarter_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pledge_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thisData</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final.app.plot_kickstarter_analysis" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="final.app.preprocess_data">
+<span class="sig-prename descclassname"><span class="pre">final.app.</span></span><span class="sig-name descname"><span class="pre">preprocess_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#final.app.preprocess_data" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-final.data_handling">
+<span id="final-data-handling-module"></span><h2>final.data_handling module<a class="headerlink" href="#module-final.data_handling" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="final.data_handling.load_data">
+<span class="sig-prename descclassname"><span class="pre">final.data_handling.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final.data_handling.load_data" title="Link to this definition"></a></dt>
+<dd><p>Loads and processes Kickstarter project data from a CSV file.</p>
+<p>The function performs the following operations:
+- Reads data from ‘kickstarterData.csv’ into a DataFrame.
+- Converts ‘usd_exchange_rate’, ‘usd_pledged’, and ‘goal’ columns to numeric, coercing invalid values to NaN.
+- Selects relevant columns and removes duplicate entries based on the ‘slug’ column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A cleaned DataFrame containing the following columns:
+- ‘usd_exchange_rate’ : The exchange rate to USD.
+- ‘usd_pledged’ : The amount pledged in USD.
+- ‘category’ : The project category.
+- ‘urls’ : URL information about the project.
+- ‘creator’ : Information about the project’s creator.
+- ‘goal’ : The funding goal for the project.
+- ‘deadline’ : The project deadline.
+- ‘created_at’ : The project creation date.
+- ‘slug’ : A unique project identifier.
+- ‘name’ : The project name.
+- ‘backers_count’ : Number of backers for the project.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">   usd_exchange_rate  usd_pledged     category                    urls  ...  name  backers_count</span>
+<span class="go">0               1.0         500.0  technology   {&#39;web&#39;: &#39;example.com&#39;}  ...   App           10</span>
+<span class="go">1               1.2         300.0       music  {&#39;web&#39;: &#39;example.org&#39;}   ...  Song            5</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-final.main">
+<span id="final-main-module"></span><h2>final.main module<a class="headerlink" href="#module-final.main" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="final.main.main">
+<span class="sig-prename descclassname"><span class="pre">final.main.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final.main.main" title="Link to this definition"></a></dt>
+<dd><p>Runs the full Kickstarter analysis pipeline.</p>
+<p>This function demonstrates the end-to-end workflow, including:
+- Data loading and preprocessing.
+- Filtering data for a specific project category.
+- Computing business metrics such as break-even backers, profit, and overhead.
+- Fitting an OLS regression model with interaction terms.
+- Generating plots to visualize business variables and prediction results.</p>
+<section id="workflow-steps">
+<h3>Workflow Steps<a class="headerlink" href="#workflow-steps" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt><strong>Data Loading</strong>:</dt><dd><ul class="simple">
+<li><p>Loads Kickstarter data using <cite>load_data</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Preprocessing</strong>:</dt><dd><ul class="simple">
+<li><p>Cleans the data using <cite>preprocess_data</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Filtering</strong>:</dt><dd><ul class="simple">
+<li><p>Filters the data for a specific category (e.g., ‘Art’) using <cite>filter_category</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Business Variable Computation</strong>:</dt><dd><ul class="simple">
+<li><p>Computes key business variables (e.g., break-even quantities) with <cite>compute_business_variables</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Modeling</strong>:</dt><dd><ul class="simple">
+<li><p>Fits an OLS regression model to predict the percentage of goal reached using <cite>fit_interaction_model</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Visualization</strong>:</dt><dd><ul class="simple">
+<li><p>Generates density plots for business metrics using <cite>plot_business_variables</cite>.</p></li>
+<li><p>Plots Kickstarter analysis results, including predictions and percentiles, using <cite>plot_kickstarter_analysis</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Example inputs are hardcoded, such as the pledge value, unit cost, and overhead costs.</p></li>
+<li><p>Figures are generated but not explicitly displayed or saved in this function.</p></li>
+</ul>
+<p class="rubric">Example</p>
+<p>To execute the script:
+&gt;&gt;&gt; python main_script.py</p>
+<p>Outputs:
+- Density plots for business variables: break-even backers, overhead costs, and profit.
+- Visualizations of pledge values, funding goals, revenue, and percent of goal reached.</p>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-final.modeling">
+<span id="final-modeling-module"></span><h2>final.modeling module<a class="headerlink" href="#module-final.modeling" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="final.modeling.fit_interaction_model">
+<span class="sig-prename descclassname"><span class="pre">final.modeling.</span></span><span class="sig-name descname"><span class="pre">fit_interaction_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final.modeling.fit_interaction_model" title="Link to this definition"></a></dt>
+<dd><p>Fits an Ordinary Least Squares (OLS) regression model with interaction terms.</p>
+<p>The model predicts the log-transformed ‘percent_of_goal_reached’ based on:
+- Log-transformed ‘averagePledge’ (log_pledge),
+- Log-transformed ‘goal_usd’ (log_goal),
+- Interaction effects between ‘log_pledge’, ‘log_goal’, and the categorical variable ‘parent_category’.</p>
+<p>The function filters the input DataFrame to exclude rows with non-positive values in the relevant columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – Input DataFrame containing the following columns:
+- ‘percent_of_goal_reached’ : Percentage of the funding goal reached.
+- ‘averagePledge’ : Average pledge amount per backer.
+- ‘goal_usd’ : Funding goal in USD.
+- ‘parent_category’ : Categorical variable for the project category.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A fitted OLS model with interaction terms.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>statsmodels.regression.linear_model.RegressionResultsWrapper</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Logarithmic transformations are applied to ‘percent_of_goal_reached’, ‘averagePledge’, and ‘goal_usd’.</p></li>
+<li><p>Interaction terms are included between ‘log_pledge’, ‘log_goal’, and the categorical variable ‘parent_category’.</p></li>
+</ul>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+<span class="gp">... </span>    <span class="s1">&#39;percent_of_goal_reached&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s1">&#39;averagePledge&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s1">&#39;goal_usd&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1500</span><span class="p">,</span> <span class="mi">2000</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s1">&#39;parent_category&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Technology&#39;</span><span class="p">,</span> <span class="s1">&#39;Music&#39;</span><span class="p">,</span> <span class="s1">&#39;Art&#39;</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">fit_interaction_model</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="final-package-app-module">
+<h2>final.package_app module<a class="headerlink" href="#final-package-app-module" title="Link to this heading"></a></h2>
+</section>
+<section id="module-final.plotting">
+<span id="final-plotting-module"></span><h2>final.plotting module<a class="headerlink" href="#module-final.plotting" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="final.plotting.plot_business_variables">
+<span class="sig-prename descclassname"><span class="pre">final.plotting.</span></span><span class="sig-name descname"><span class="pre">plot_business_variables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userData</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pledge_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_cost</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overhead</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">breakEvenPercentageOfGoal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final.plotting.plot_business_variables" title="Link to this definition"></a></dt>
+<dd><p>Generates density plots for break-even backers, overhead costs, and profit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>userData</strong> (<em>pd.DataFrame</em>) – A DataFrame containing project data with columns like ‘breakQ’, ‘fCost’, and ‘profit’.</p></li>
+<li><p><strong>pledge_value</strong> (<em>float</em>) – The value of a single pledge.</p></li>
+<li><p><strong>unit_cost</strong> (<em>float</em>) – Cost per unit of the pledge.</p></li>
+<li><p><strong>overhead</strong> (<em>float</em>) – Fixed overhead cost.</p></li>
+<li><p><strong>breakEvenPercentageOfGoal</strong> (<em>float</em>) – Break-even percentage relative to the goal.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple of matplotlib.figure.Figure objects:
+- break_fig : Break-even backers plot.
+- overhead_fig : Overhead cost plot.
+- profit_fig : Profit plot.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">userData</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;breakQ&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="s1">&#39;fCost&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span> <span class="s1">&#39;profit&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">figs</span> <span class="o">=</span> <span class="n">plot_business_variables</span><span class="p">(</span><span class="n">userData</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">figs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># Show the break-even plot</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="final.plotting.plot_density_with_vline">
+<span class="sig-prename descclassname"><span class="pre">final.plotting.</span></span><span class="sig-name descname"><span class="pre">plot_density_with_vline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vline_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_breaks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'#4682B4'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final.plotting.plot_density_with_vline" title="Link to this definition"></a></dt>
+<dd><p>Plots a density curve for the given data with a vertical line overlaid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>array-like</em>) – Data to plot the density for.</p></li>
+<li><p><strong>vline_val</strong> (<em>float</em>) – The value where the vertical line will be placed.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – Title of the plot.</p></li>
+<li><p><strong>x_breaks</strong> (<em>list</em><em> of </em><em>floats</em>) – Tick positions for the x-axis in log scale.</p></li>
+<li><p><strong>x_labels</strong> (<em>list</em><em> of </em><em>str</em>) – Labels corresponding to the x_breaks.</p></li>
+<li><p><strong>color</strong> (<em>str</em><em>, </em><em>optional</em>) – Color for the density plot and vertical line, default is ‘#4682B4’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A matplotlib figure object containing the plot.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>matplotlib.figure.Figure</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">plot_density_with_vline</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="s2">&quot;Example Plot&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;10&quot;</span><span class="p">,</span> <span class="s2">&quot;100&quot;</span><span class="p">,</span> <span class="s2">&quot;1k&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="final.plotting.plot_kickstarter_analysis">
+<span class="sig-prename descclassname"><span class="pre">final.plotting.</span></span><span class="sig-name descname"><span class="pre">plot_kickstarter_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pledge_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thisData</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#final.plotting.plot_kickstarter_analysis" title="Link to this definition"></a></dt>
+<dd><p>Performs an analysis of Kickstarter data and generates plots and key metrics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pledge_value</strong> (<em>float</em>) – The average pledge value for a project.</p></li>
+<li><p><strong>goal_value</strong> (<em>float</em>) – The funding goal in USD.</p></li>
+<li><p><strong>category_value</strong> (<em>str</em>) – The parent category of the project.</p></li>
+<li><p><strong>thisData</strong> (<em>pd.DataFrame</em>) – The input DataFrame containing Kickstarter project data.</p></li>
+<li><p><strong>model</strong> (<em>statsmodels.regression.linear_model.RegressionResultsWrapper</em>) – A pre-fitted regression model for predicting ‘percent_of_goal_reached’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing:
+- Matplotlib figures for average pledge, goal, percent of goal reached, and revenue.
+- Percentile ranks and probabilities for the provided metrics.
+- Prediction confidence intervals and interpretations.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;averagePledge&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">],</span> <span class="s1">&#39;goal_usd&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1000</span><span class="p">],</span> <span class="s1">&#39;parent_category&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Music&#39;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="s1">&#39;log_percent ~ log_pledge * log_goal&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">plot_kickstarter_analysis</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="s1">&#39;Music&#39;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># Show Average Pledge plot</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-final.preprocessing">
+<span id="final-preprocessing-module"></span><h2>final.preprocessing module<a class="headerlink" href="#module-final.preprocessing" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="final.preprocessing.load_data">
+<span class="sig-prename descclassname"><span class="pre">final.preprocessing.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#final.preprocessing.load_data" title="Link to this definition"></a></dt>
+<dd><p>Loads and processes Kickstarter project data from a CSV file.</p>
+<p>The function performs the following operations:
+- Reads data from ‘kickstarterData.csv’ into a DataFrame.
+- Converts ‘usd_exchange_rate’, ‘usd_pledged’, and ‘goal’ columns to numeric, coercing invalid values to NaN.
+- Selects relevant columns and removes duplicate entries based on the ‘slug’ column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A cleaned DataFrame containing the following columns:
+- ‘usd_exchange_rate’ : The exchange rate to USD.
+- ‘usd_pledged’ : The amount pledged in USD.
+- ‘category’ : The project category.
+- ‘urls’ : URL information about the project.
+- ‘creator’ : Information about the project’s creator.
+- ‘goal’ : The funding goal for the project.
+- ‘deadline’ : The project deadline.
+- ‘created_at’ : The project creation date.
+- ‘slug’ : A unique project identifier.
+- ‘name’ : The project name.
+- ‘backers_count’ : Number of backers for the project.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">   usd_exchange_rate  usd_pledged     category                    urls  ...  name  backers_count</span>
+<span class="go">0               1.0         500.0  technology   {&#39;web&#39;: &#39;example.com&#39;}  ...   App           10</span>
+<span class="go">1               1.2         300.0       music  {&#39;web&#39;: &#39;example.org&#39;}   ...  Song            5</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="final.preprocessing.preprocess_data">
+<span class="sig-prename descclassname"><span class="pre">final.preprocessing.</span></span><span class="sig-name descname"><span class="pre">preprocess_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#final.preprocessing.preprocess_data" title="Link to this definition"></a></dt>
+<dd><p>Preprocesses the Kickstarter project data to compute additional metrics and filter records.</p>
+<p>The preprocessing steps include:
+- Replacing zero values in ‘usd_pledged’ and ‘backers_count’ with 1.
+- Computing derived metrics such as ‘goal_usd’, ‘surplus_usd’, ‘averagePledge’, and ‘percent_of_goal_reached’.
+- Adding a binary ‘passed’ column to indicate whether the goal was reached.
+- Extracting the parent category from the ‘category’ JSON string.
+- Filtering out projects with fewer than 5 backers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – The input DataFrame containing Kickstarter project data. Required columns include:
+- ‘usd_exchange_rate’
+- ‘usd_pledged’
+- ‘goal’
+- ‘category’
+- ‘backers_count’</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A preprocessed DataFrame with the following additional columns:
+- ‘goal_usd’ : Goal amount in USD.
+- ‘surplus_usd’ : Surplus amount (pledged - goal_usd).
+- ‘averagePledge’ : Average pledge per backer.
+- ‘passed’ : Binary column indicating whether the project reached its goal.
+- ‘percent_of_goal_reached’ : Percentage of the goal that was reached.
+- ‘parent_category’ : Extracted parent category from the ‘category’ column.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+<span class="gp">... </span>    <span class="s1">&#39;usd_exchange_rate&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s1">&#39;usd_pledged&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s1">&#39;goal&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">200</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;{&quot;parent_name&quot;: &quot;Technology&quot;}&#39;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="s1">&#39;backers_count&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">preprocess_data</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="go">   usd_exchange_rate  usd_pledged  backers_count  goal_usd  surplus_usd  ...  passed  percent_of_goal_reached parent_category</span>
+<span class="go">0               1.0          100             10     200.0       -100.0  ...       0                    0.50       Technology</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="final-setup-module">
+<h2>final.setup module<a class="headerlink" href="#final-setup-module" title="Link to this heading"></a></h2>
+</section>
+<section id="module-final">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-final" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="final package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jaden Earl.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
