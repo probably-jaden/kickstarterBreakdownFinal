@@ -59,15 +59,6 @@ else:
 
 interaction_model_category = fit_interaction_model(data)
 
-# Note:
-# The provided final.plotting.plot_kickstarter_analysis in the user's package returns fewer values than the original code.
-# For full functionality, we assume that plot_kickstarter_analysis is adapted to return all needed values.
-# If not, you would need to restore the additional computations from the original code here.
-# Below, we mimic the original functionality assuming the final.plotting.plot_kickstarter_analysis now returns:
-# (fig_pledge, fig_goal, fig_percent, fig_revenue,
-#  pledge_percentile, goal_percentile, prob_goal_is_met, expectedRevenue,
-#  pred_mean, lower_percent, upper_percent, percent_percentile, percent_interpretation,
-#  lower_rev, upper_rev, revenue_percentile, revenue_interpretation)
 
 (fig_pledge, fig_goal, fig_percent, fig_revenue,
  pledge_percentile, goal_percentile, prob_goal_is_met, expectedRevenue,
