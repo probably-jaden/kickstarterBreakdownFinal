@@ -1,3 +1,51 @@
+"""
+Module for Visualizing Kickstarter Data and Business Analysis
+
+This module provides functions for visualizing and analyzing Kickstarter data. It includes 
+density plots, analysis of business metrics (e.g., profit, overhead costs, break-even backers), 
+and Kickstarter prediction analysis using a pre-fitted regression model.
+
+Key Functions
+-------------
+1. `plot_density_with_vline`:
+    Generates density plots with a vertical line overlay to visualize the distribution of data.
+2. `plot_business_variables`:
+    Produces density plots for critical business metrics such as break-even backers, overhead costs, and profit.
+3. `plot_kickstarter_analysis`:
+    Analyzes Kickstarter data and generates visualizations and key metrics, including probabilities, percentiles, 
+    and revenue predictions.
+
+Dependencies
+------------
+- numpy
+- matplotlib
+- seaborn
+- pandas
+- scipy.stats.norm
+- `compute_business_variables` from the `final.analysis` module
+
+Example Usage
+-------------
+# Example workflow to generate Kickstarter analysis plots
+>>> import pandas as pd
+>>> from final.analysis import compute_business_variables
+>>> from module_name import plot_density_with_vline, plot_business_variables, plot_kickstarter_analysis
+>>> df = pd.read_csv("kickstarter_data.csv")
+>>> pledge_value = 100.0
+>>> unit_cost = 20.0
+>>> overhead = 5000.0
+>>> breakEvenPercentageOfGoal = 0.5
+
+# Generate business metric plots
+>>> figs = plot_business_variables(df, pledge_value, unit_cost, overhead, breakEvenPercentageOfGoal)
+
+# Perform Kickstarter analysis and visualization
+>>> model = some_pre_fitted_model
+>>> results = plot_kickstarter_analysis(pledge_value, 50000, "Art", df, model)
+>>> results[0][0].show()  # Show the Average Pledge plot
+"""
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
