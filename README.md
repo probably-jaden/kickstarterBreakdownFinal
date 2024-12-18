@@ -4,6 +4,8 @@ Welcome to the **Kickstarter Analysis** project! This repository contains a Pyth
 
 Best way to get familiar with the repo is to play around on the streamlit app, which can be visited here: https://kickstarter.streamlit.app/
 
+Documentation: https://probably-jaden.github.io/kickstarterBreakdownFinal/final.html
+
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)
